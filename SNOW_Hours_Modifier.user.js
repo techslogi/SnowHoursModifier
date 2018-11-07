@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SNOW Fix hours
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @updateURL    https://github.com/techslogi/SnowHoursModifier/raw/master/SNOW_Hours_Modifier.js
 // @downloadURL	 https://github.com/techslogi/SnowHoursModifier/raw/master/SNOW_Hours_Modifier.js
 // @description  Reduces hours from a snow incident;
@@ -21,7 +21,7 @@
 			var i;
 			var hoursIncident;
 			var hoursList;
-			var hoursToReduce = 5;
+			var hoursToReduce = 3;
 			hoursIncident = document.getElementsByClassName("activity_date");
 			hoursList = document.getElementsByClassName("datex date-calendar");
 			if(hoursIncident[0] != undefined){
