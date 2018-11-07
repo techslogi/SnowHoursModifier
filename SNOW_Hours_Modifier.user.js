@@ -2,8 +2,8 @@
 // @name         SNOW Fix hours
 // @namespace    http://tampermonkey.net/
 // @version      1.1
-// @updateURL    https://github.com/techslogi/SnowHoursModifier/raw/master/SNOW_Hours_Modifier.js
-// @downloadURL	 https://github.com/techslogi/SnowHoursModifier/raw/master/SNOW_Hours_Modifier.js
+// @updateURL    https://github.com/techslogi/SnowHoursModifier/raw/master/SNOW_Hours_Modifier.user.js
+// @downloadURL	 https://github.com/techslogi/SnowHoursModifier/raw/master/SNOW_Hours_Modifier.user.js
 // @description  Reduces hours from a snow incident;
 // @author       Gabriel Vicente
 // @match        *://itsmgbpeu.service-now.com/*
