@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SNOW Fix hours
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @updateURL    https://github.com/techslogi/SnowHoursModifier/raw/master/SNOW_Hours_Modifier.user.js
 // @downloadURL	 https://github.com/techslogi/SnowHoursModifier/raw/master/SNOW_Hours_Modifier.user.js
 // @description  Reduces hours from a snow incident;
@@ -14,32 +14,32 @@
 
 (function() {
 
-	var currentURL = window.location.href.toString();
-	if(currentURL.includes("incident.do") || currentURL.includes("incident_list.do")){
-		try{
-			var dateTime;
-			var i;
-			var hoursIncident;
-			var hoursList;
-			var hoursToReduce = 3;
-			hoursIncident = document.getElementsByClassName("activity_date");
-			hoursList = document.getElementsByClassName("datex date-calendar");
-			if(hoursIncident[0] != undefined){
-				for(i=0;i<hoursIncident.length;i++){
-					dateTime = moment(hoursIncident[i].textContent.toString().replace(/ /g, "T")).subtract(hoursToReduce, 'hours').format("HH:mm:ss[ ]DD/MM/YYYY");
-					hoursIncident[i].textContent = dateTime;
-				}
-			}
-			if(hoursList[0] != undefined){
-				for(i=0;i<hoursList.length;i++){
-					dateTime = moment(hoursList[i].textContent.toString().replace(/ /g, "T")).subtract(hoursToReduce, 'hours').format("HH:mm:ss[ ]DD/MM/YYYY");
-					hoursList[i].textContent = dateTime;
-				}
-			}
-		}catch(e){
-			alert("error: " + e.message);
-		}
-	}
+    var currentURL = window.location.href.toString();
+    if(currentURL.includes("incident.do") || currentURL.includes("incident_list.do")){
+        try{
+            var dateTime;
+            var i;
+            var hoursIncident;
+            var hoursList;
+            var hoursToReduce = 3;
+            hoursIncident = document.getElementsByClassName("activity_date");
+            hoursList = document.getElementsByClassName("datex date-calendar");
+            if(hoursIncident[0] != undefined){
+                for(i=0;i<hoursIncident.length;i++){
+                    dateTime = moment(hoursIncident[i].textContent.toString().replace(/ /g, "T")).subtract(hoursToReduce, 'hours').format("YYYY-MM-DD HH:mm:ss");
+                    hoursIncident[i].textContent = dateTime;
+                }
+            }
+            if(hoursList[0] != undefined){
+                for(i=0;i<hoursList.length;i++){
+                    dateTime = moment(hoursList[i].textContent.toString().replace(/ /g, "T")).subtract(hoursToReduce, 'hours').format("YYYY-MM-DD HH:mm:ss");
+                    hoursList[i].textContent = dateTime;
+                }
+            }
+        }catch(e){
+            alert("error: " + e.message);
+        }
+    }
 
 })();
 
